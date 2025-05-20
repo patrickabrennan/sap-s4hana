@@ -289,10 +289,10 @@ variable "SAP_MAIN_PASSWORD" {
 	type		= string
 	sensitive = true
         description = "Common password for all users that are created during the installation. It must be 8 to 14 characters long, it must contain at least one digit (0-9) and one uppercase letter, it must not contain backslash and double quote."
-	validation {
-        condition = length(regexall("^(.{0,9}|.{15,}|[^0-9]*)$", var.SAP_MAIN_PASSWORD)) == 0 && length(regexall("^[^0-9_][0-9a-zA-Z@#$_]+$", var.SAP_MAIN_PASSWORD)) > 0 && length(regexall("[A-Z]", var.SAP_MAIN_PASSWORD)) > 0
-        error_message = "The SAP_MAIN_PASSWORD is not valid."
-	}
+	#validation {
+        #condition = length(regexall("^(.{0,9}|.{15,}|[^0-9]*)$", var.SAP_MAIN_PASSWORD)) == 0 && length(regexall("^[^0-9_][0-9a-zA-Z@#$_]+$", var.SAP_MAIN_PASSWORD)) > 0 && length(regexall("[A-Z]", var.SAP_MAIN_PASSWORD)) > 0
+        #error_message = "The SAP_MAIN_PASSWORD is not valid."
+	#}
 }
 
 variable "HDB_CONCURRENT_JOBS" {
