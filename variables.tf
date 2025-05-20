@@ -25,7 +25,7 @@ variable "SSH_KEYS" {
 		condition     = var.SSH_KEYS == [] ? false : true && var.SSH_KEYS == [""] ? false : true
 		error_message = "At least one SSH KEY is needed to be able to access the server."
 	}
-	default = ["fuF4SUBZk76CuO8SnvBZNtbgatqva2klu77NgUW1BjI"]
+	default = "fuF4SUBZk76CuO8SnvBZNtbgatqva2klu77NgUW1BjI"
 }
 
 variable "BASTION_FLOATING_IP" {
